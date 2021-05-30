@@ -13,3 +13,13 @@
     delay:200,
     timeout:500
   }
+5.指令使用
+  export default {
+    inserted(el, bindings, vnode) {
+        let btnPer = bindings.value;
+        let boolean = vnode.context.$store.state.bindPer[btnPer];
+        !boolean && el.parentNode.removeChild(el)
+    }
+  }
+  <button v-has="add"></button>
+  directives:{has}
