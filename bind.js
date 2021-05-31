@@ -1,4 +1,4 @@
-Function.prototype._bind = function(context,...args1){
+    Function.prototype._bind = function(context,...args1){
       const self = this;
       if(typeof self !== 'function' || Object.prototype.toString.call(self) !== '[object Function]'){
         throw new Error(this + 'must be function')
