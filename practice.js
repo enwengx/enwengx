@@ -28,6 +28,7 @@ test()
 
 /**
 * 求最终left哈right的宽度
+* flex: 0 1 auto表示什么意思
 */
 <div class="container">
     <div class="left"></div>
