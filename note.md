@@ -23,3 +23,4 @@
   }
   <button v-has="add"></button>
   directives:{has}
+6.typeOf可判断那些类型
