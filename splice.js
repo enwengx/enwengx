@@ -7,7 +7,6 @@
         const removeList = this.slice(start, start + num);
         const right = this.slice(start + num);
         let addIndex = start
-        console.log(arr,addIndex,right)
         arr.concat(right).forEach(item=>{
             this[addIndex] = item
             addIndex++
@@ -17,4 +16,4 @@
     }
     const arr = [1,2,3,4]
     const list = arr._splice(1,2,3)
-    console.log(list,arr
+    console.log(list,arr)
