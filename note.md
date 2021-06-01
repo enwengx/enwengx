@@ -24,3 +24,9 @@
   <button v-has="add"></button>
   directives:{has}
 6.typeOf可判断那些类型
+7.css
+  .overflow-eclipsis {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
