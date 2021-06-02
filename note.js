@@ -30,6 +30,18 @@
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
   }
+  { display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; //行数
+    overflow: hidden;
+  }
+  { p{position: relative; line-height: 20px; max-height: 40px;overflow: hidden;}
+  p::after{content: "..."; position: absolute; bottom: 0; right: 0; padding-left: 40px;
+  background: -webkit-linear-gradient(left, transparent, #fff 55%);
+  background: -o-linear-gradient(right, transparent, #fff 55%);
+  background: -moz-linear-gradient(right, transparent, #fff 55%);
+  background: linear-gradient(to right, transparent, #fff 55%);
+  }
 8.loader 和 plugin 的区别是什么 
   loader，它是一个转换器，将A文件进行编译成B文件，比如：将A.less转换为A.css，单纯的文件转换过程。
   plugin是一个扩展器，它丰富了webpack本身，针对是loader结束后，webpack打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点，执行广泛的任务
