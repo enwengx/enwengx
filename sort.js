@@ -95,6 +95,26 @@ function mergeSort(arr, compareFn = compareDefault) {
 // arr = mergeSort(arr)
 
 // 5.快速排序
+function quickSort(arr){
+        const { length } = arr;
+        if(length <= 1) return arr
+        const middle = Math.floor(length/2);
+        const left = [];
+        const right = [];
+        for(let i=0; i<length; i++) {
+            const value = arr[i]
+            if(i !== middle) {
+                if(value <= arr[middle]) {
+                    left.push(value)
+                }else {
+                    right.push(value)
+                }
+            }
+        }
+        return quickSort(left).concat(arr[middle], quickSort(right))
+    }
+
+
 function quickSort(arr, compareFn = compareDefault) {
 	return quick(arr, 0, arr.length - 1, compareFn)
 }
