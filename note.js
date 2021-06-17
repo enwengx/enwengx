@@ -60,3 +60,23 @@
 
 14.https://github.com/Akryum/vue-9-perf-secrets vue性能优化9法
    https://blog.csdn.net/userkang/article/details/113374716?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242
+15.function debounce(func: Function, wait = 500): Function {
+    let timeout = null;
+    return function(...arg: any[]): void {
+        if (timeout) clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, arg);
+        }, wait);
+    };
+}
+function throttle(func: Function, wait = 500): Function {
+    let timeout = null;
+    return function(...arg: any[]): void {
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                timeout = null;
+                func.apply(this, arg);
+            }, wait);
+        }
+    };
+}
