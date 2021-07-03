@@ -62,3 +62,19 @@ function getPriority(char){
     }
     let a = "1+(23+3)*(0+2)/2"
     console.log(calculator(a))
+
+
+function maxProfit(arr,fee) {
+        let buyPrice = arr[0] + fee;
+        let result = 0
+        for(let i = 0; i < arr.length; i++) {
+            if(buyPrice > arr[i] + fee) {
+                buyPrice = arr[i] + fee;
+            }else if(buyPrice < arr[i]) {
+                result += arr[i] - buyPrice;
+                buyPrice = arr[i]
+            }
+        }
+        console.log(result)
+        return result
+    }
